@@ -1,0 +1,22 @@
+# Exclude model checkpoints
+*.pth
+*.pt
+*.ckpt
+*.bin
+
+# Exclude directories containing checkpoints
+pretrained/
+experiments/*/checkpoint-*
+
+# Exclude experiment results
+experiments/*/events.*
+test/*/events.*
+
+# Exclude cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Exclude system files
+.DS_Store
