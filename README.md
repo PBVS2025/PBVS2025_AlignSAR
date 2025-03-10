@@ -96,11 +96,11 @@ python main_image.py \
 Due to file size limitations, pre-trained models are not included in this repository. 
 You can download them from the following Google Drive link:
 
-[Download Pre-trained Models](https://drive.google.com/drive/folders/your-folder-id)
+[Download Pre-trained Models](https://drive.google.com/drive/folders/1AJPyluRsgQHLjaW28ALIDaHHSEBbV67v?usp=sharing))
 
 After downloading, place the model files in the `pretrained/` directory:
 - `mae_pretrain_vit_b_edit.pth`: MAE pre-trained ViT-B model
-- `checkpoint-best.pth`: Fine-tuned checkpoints (where XX is the epoch number)
+- `checkpoint-best.pth`: Fine-tuned checkpoints
 
 The pre-trained models include:
 1. MAE pre-trained ViT-B model: Base Vision Transformer model pre-trained using Masked Autoencoder approach
@@ -133,10 +133,7 @@ python main_image_test2.py \
     --epochs 50 \
     --eval
 ```
-## Model Architecture
-AdaptFormer is based on Vision Transformer (ViT) with the following adaptations:
-- FFN adaptation modules inserted into transformer blocks
-- Parameter-efficient fine-tuning that updates only a small subset of parameters
+
 
 ## Citation
 If you use this code, please cite:
