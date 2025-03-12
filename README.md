@@ -1,4 +1,4 @@
-# AdaptFormer for SAR Image Classification
+# AlignSAR: Aligning SAR & EO representations for SAR Image Classification
 
 ## Overview
 This repository contains the implementation of AdaptFormer for SAR image classification. AdaptFormer is a parameter-efficient fine-tuning method that adapts pre-trained vision transformers to downstream tasks by introducing lightweight adapter modules.
