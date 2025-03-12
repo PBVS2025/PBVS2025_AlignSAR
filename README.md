@@ -61,19 +61,19 @@ You can use the provided training script:
 
 The `train9.sh` script contains:
 ```bash
-export CUDA_VISIBLE_DEVICES=0,1,2
+export CUDA_VISIBLE_DEVICES=0
 
 python main_image.py \
     --batch_size 128 \
     --cls_token \
     --finetune pretrained/mae_pretrain_vit_b_edit.pth \
-    --data_path /path/to/dataset \
+    --data_path /path/to/train/data \
     --drop_path 0.0 \
     --blr 5e-4 \
     --epochs 50 \
     --warmup_epochs 5 \
     --ffn_adapt \
-    --output_dir experiments/exp09
+    --output_dir experiments
 ```
 
 ### Training Parameters
@@ -96,10 +96,10 @@ python main_image.py \
 Due to file size limitations, pre-trained models are not included in this repository. 
 You can download them from the following Google Drive link:
 
-[Download Pre-trained Models](https://drive.google.com/drive/folders/1AJPyluRsgQHLjaW28ALIDaHHSEBbV67v?usp=sharing))
+[Download Pre-trained Models](https://drive.google.com/drive/folders/1AJPyluRsgQHLjaW28ALIDaHHSEBbV67v?usp=sharing)
 
 After downloading, place the model files in the `pretrained/` directory:
-- `mae_pretrain_vit_b_edit.pth`: MAE pre-trained ViT-B model
+- `mae_pretrain_vit_b_edit.pth`: MAE pre-trained ViT-B/16 model
 - `checkpoint-best.pth`: Fine-tuned checkpoints
 
 The pre-trained models include:
@@ -123,13 +123,13 @@ python main_image_test2.py \
     --cls_token \
     --finetune pretrained/mae_pretrain_vit_b_edit.pth \
     --data_path /path/to/test/data \
-    --resume pretrained/checkpoint-24.pth \
+    --resume pretrained/checkpoint-best.pth \
     --drop_path 0.0 \
     --blr 0.1 \
     --dataset cifar100 \
     --nb_classes 10 \
     --ffn_adapt \
-    --output_dir test/exp09/epoch24 \
+    --output_dir test \
     --epochs 50 \
     --eval
 ```
